@@ -1,0 +1,66 @@
+def chatbot_response(message):
+    message = message.lower()
+
+    # Greetings
+    if message.startswith(('hi', 'hello', 'hey')):
+        return "Hello! It's nice to meet you. How can I assist you today?"
+    elif message.startswith(('good morning', 'good afternoon', 'good evening')):
+        return "Good day to you! How can I be of help?"
+
+    # Name
+    elif message.startswith(('what is your name', 'what are you called', 'who are you')):
+        return "My name is chatbot. I'm an AI assistant ."
+
+    # Well-being
+    elif message.startswith(('how are you', 'how are you doing')):
+        return "I'm doing well, thank you for asking! I'm an AI, so I don't have feelings, but I'm operating as intended."
+
+    # Weather
+    elif 'weather' in message:
+        return "Unfortunately, I don't have access to real-time weather information. However, you can check weather websites or apps for the latest updates on weather conditions and forecasts."
+
+    # Time
+    elif 'time' in message:
+        return "I don't actually have a concept of time. As an AI assistant, I don't experience the passage of time the same way humans do."
+
+    # Gratitude
+    elif message.startswith(('thank you', 'thanks')):
+        return "You're very welcome! I'm always happy to help."
+
+    # Farewell
+    elif message.startswith(('bye', 'goodbye', 'see you later')):
+        return "Goodbye! Have a wonderful day. Feel free to chat with me again anytime."
+
+    # Joke
+    elif message.startswith(('tell me a joke', 'say something funny')):
+        return "Why did the tomato turn red? Because it saw the salad dressing!"
+
+    # Age
+    elif message.startswith(('how old are you', 'what is your age')):
+        return "I'm an AI assistant, so I don't have an age in the same sense that humans do. I was created by Anthropic, but I don't have a specific birth date."
+
+    # Capabilities
+    elif message.startswith(('what can you do', 'what are your capabilities')):
+        return "As an AI assistant, I can help with a wide range of tasks such as answering questions, providing information, analyzing data, and even writing code. However, I don't have access to external systems or APIs, so my capabilities are limited to my built-in knowledge and programming."
+
+    # Favorite
+    elif message.startswith(('what is your favorite', 'do you have a favorite')):
+        return "I don't have personal preferences or favorites since I'm an AI. I don't experience the world the same way humans do."
+
+    # Creator
+    elif message.startswith(('who created you', 'who made you')):
+        return "I was created by shanthi. "
+
+
+    # Default response
+    else:
+        return "I'm afraid I don't understand your query. Could you please rephrase or provide more context?"
+
+# Main loop
+print("Hello! I'm a simple chatbot. You can ask me questions or type 'bye' to exit.")
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == 'bye':
+        break
+    response = chatbot_response(user_input)
+    print("Bot:", response)
